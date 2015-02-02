@@ -10,7 +10,7 @@ getHtableTypes <- function(data){
   } else if (is.data.frame(data)){
     types <- as.character(lapply(data, class))  
   } else{
-    stop("Unsupported object type. Can't extract column types.")
+    warning("Unsupported object type. Can't extract column types.")
   }
   
   types <- sapply(types, function(type){
